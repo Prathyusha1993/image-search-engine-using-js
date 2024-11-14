@@ -17,6 +17,10 @@ async function searchImages(){
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
+
+    if(page === 1){
+        searchResults.innerHTML = '';
+    }
     const results = data.results;
     results.map((result) => {
         const img = document.createElement('img');
